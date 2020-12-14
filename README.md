@@ -5,7 +5,8 @@ Some customizations to a raspberry pi 3 turned into a picture frame. These are j
 ## Docs/Setup Notes
 * **bin/MotionDetectDisplayControl.py** manages PIR and turning on/off the monitor via HDMI
   * add as service to */lib/systemd/system/motiondetect.service*:
-    `[Unit]
+    ```
+     [Unit]
      Description=Motion Detect Display Control
      After=multi-user.target
 
@@ -14,7 +15,8 @@ Some customizations to a raspberry pi 3 turned into a picture frame. These are j
      ExecStart=/usr/bin/python3 /usr/local/bin/MotionDetectDisplayControl.py > /home/pi/motiondetect.log 2>&1
 
      [Install]
-     WantedBy=multi-user.target`
+     WantedBy=multi-user.target
+     ```
   * commands:
     * `sudo chmod 644 /lib/systemd/system/motiondetect.service`
     * `sudo systemctl daemon-reload`
@@ -22,11 +24,11 @@ Some customizations to a raspberry pi 3 turned into a picture frame. These are j
 
 * **bin/display-photos.sh** uses qiv to display photos
   * to start up in x, add the following to */etc/xdg/lxsession/LXDE-pi/autostart*:
-    `@/usr/local/bin/display-photos.sh`
+    *  `@/usr/local/bin/display-photos.sh`
 
 * **bin/refresh-gphotos.sh** uses rclone to pull images from a google photos album
   * add this via crontab:
-    `0 1 * * * /usr/local/bin/refresh-gphotos.sh`
+    * `0 1 * * * /usr/local/bin/refresh-gphotos.sh`
 
 ## Notes & References
 * https://drjohnstechtalk.com/blog/2019/08/raspberry-pi-photo-frame-using-your-pictures-on-your-google-drive/
