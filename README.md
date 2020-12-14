@@ -1,6 +1,6 @@
-# pi-picture-frame
+# pi-photo-frame
 
-Some customizations to a raspberry pi 3 turned into a picture frame. These are just some notes for myself or anyone else.
+Some customizations to a raspberry pi 3 turned into a photo/picture frame. These are just some notes for myself or anyone else.
 
 ## Docs/Setup Notes
 * **bin/MotionDetectDisplayControl.py** manages PIR and turning on/off the monitor via HDMI
